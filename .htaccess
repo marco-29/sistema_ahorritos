@@ -1,0 +1,20 @@
+RewriteEngine on
+Options +FollowSymLinks
+Options -Indexes
+DirectoryIndex index.html index.php
+
+# Redirigir de www a no-www
+# RewriteCond %{HTTP_HOST} ^www\.solesta\.mx [NC]
+# RewriteRule ^(.*)$ https://solesta.mx/$1 [L,R=301]
+
+# Redirigir a HTTPS
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Regla para manejar URLs amigables para CodeIgniter
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+# Excluir ciertos archivos y directorios
+RewriteCond %{REQUEST_URI} !^(index\.php|assets|robots\.txt)

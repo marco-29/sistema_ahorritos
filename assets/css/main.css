@@ -1,0 +1,162 @@
+/* ------------------------------------------------------------------------------
+*
+*  	# Colores
+*	
+*	AZUL 1
+*  	RGBA (0,0,71,1)
+*	HEX #000047
+*	
+*	AZUL 2
+*  	RGBA (10,55,180,1)
+*	HEX #0A37B4
+*	
+*	AZUL 3
+*  	RGBA (0,110,190,1)
+*	HEX #006EBE
+*
+* ---------------------------------------------------------------------------- */
+
+/* Corrigue el error de por que el select2 no se valida con el JavaScrip para validar formularios 02/Jun/2020*/
+.was-validated .custom-select:invalid+.select2 .select2-selection {
+  border-color: #dc3545 !important;
+}
+
+.was-validated .custom-select:valid+.select2 .select2-selection {
+  border-color: #28a745 !important;
+}
+
+*:focus {
+  outline: 0px;
+}
+
+.select2-container--classic .select2-results__options .select2-results__option[aria-selected=true],
+.select2-container--default .select2-results__options .select2-results__option[aria-selected=true] {
+  background-color: #006EBE !important;
+  color: #FFFFFF !important;
+}
+
+
+.hidden {
+  display: none;
+}
+
+html body {
+  height: 100%;
+  /*background-color: rgba(255,255,255,1);*/
+  direction: ltr;
+}
+
+html {
+  scroll-behavior: smooth;
+  cursor: default;
+}
+
+.custom-file-label::after {
+  content: 'Buscar' !important;
+}
+
+.required-field::after {
+  content: ' *';
+  color: red;
+}
+
+.full-width-img {
+  width: 100%;
+}
+
+/* QUITAR FLECHAS DE INPUT NUMBER Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*  QUITAR FLECHAS DE INPUT NUMBER Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.editable-cell:hover {
+  background-color: rgba(0,0,0,0.07);
+}
+
+.editable-cell input {
+  min-width: 160px;
+}
+
+.editable-cell select {
+  min-width: 160px;
+}
+
+.table-hover tbody tr{
+  transition: all ease 50ms;
+
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+
+
+.table tbody tr{
+  transition: all ease 50ms;
+
+}
+
+.table tbody tr:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+
+.card-vista-titulos {
+  padding: 40px 20px;
+  margin: 20px auto;
+  background: url(../../almacenamiento/recursos/banners/banner-02.jpg);
+  background-size: cover;
+  background-position: top;
+}
+
+.contrato-variable {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+@media print {
+  .card-contrato {
+      background-color: white;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 15px;
+      font-size: 14px;
+      line-height: 18px;
+  }
+}
+
+/* Estilo para la fila editada */
+.fila-editada {
+  background-color: #2583c283; /* Cambia el color de fondo según tus preferencias */
+  transition: background-color 0.0s ease; /* Agrega una transición suave */
+}
+
+.no-modificable {
+  background-color: rgba(252, 0, 0, 0.396); /* Cambia el color de fondo según tus preferencias */
+  /* transition: background-color 0.5s ease; Agrega una transición suave */
+  animation: parpadeo 1.5s infinite; /* Duración de la animación: 1 segundo, repetir infinitamente */
+}
+
+@keyframes parpadeo {
+  0%, 50%, 100% {
+      opacity: 1;
+  }
+  25%, 75% {
+      opacity: 0.2;
+  }
+}
+
+.custom-button {
+  background-color: #ffffff00; /* Color de fondo rojo */
+  color: #000000; /* Color de texto blanco */
+  /* Otros estilos que desees aplicar */
+}
