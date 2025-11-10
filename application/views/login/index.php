@@ -83,7 +83,7 @@
 
                                 <div class="card-header border-0">
                                     <div class="card-title text-center">
-                                        <img class="img-fluid" src="<?php echo base_url('almacenamiento/recursos/logos/logo-horizontal.png'); ?>" alt="branding logo">
+                                        <img class="img-fluid" src="<?php echo base_url('almacenamiento/recursos/logos/logo-horizontal.png'); ?>" width="50%" alt="branding logo">
                                     </div>
                                     <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
                                         <span>Inicia sesión</span>
@@ -132,8 +132,8 @@
                                             </div>
                                         </div>
 
-                                        <button type="submit" class="btn btn-outline-secondary btn-block"><i class="ft-unlock"></i> Login</button>
-                                        <a href="<?php echo site_url(); ?>" class="btn btn-outline-danger btn-block"><i class="ft-user"></i> Atrás</a>
+                                        <button type="submit" class="btn btn-outline-success btn-block"><i class="ft-unlock"></i> Iniciar sesion</button>
+                                        <a href="<?php echo site_url('registrar'); ?>" class="btn btn-outline-primary btn-block"><i class="ft-user"></i> Registrarse</a>
 
                                         <?php echo form_close(); ?>
                                     </div>

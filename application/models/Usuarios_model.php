@@ -98,6 +98,13 @@ class Usuarios_model extends CI_Model {
         return $this->db->query('SELECT * FROM `usuarios` WHERE BINARY `correo_electronico` = '.$usuario.' OR `telefono` = '.$usuario);
     }
 
+    public function obtener_usuario_por_correo_electronico_o_usuario($usuario) {   
+        return $this->db->query(
+        'SELECT * 
+        FROM `usuarios` 
+        WHERE BINARY `correo_electronico` = '.$usuario.' OR `telefono` = '.$usuario);
+    }
+
 	public function obtener_para_proyectos_ver($identificador, $proyecto_identificador) {
         $query = $this->db
             ->where_in('t1.identificador', $identificador)
