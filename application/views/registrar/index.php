@@ -76,10 +76,10 @@
             <div class="content-header row">
             </div>
             <div class="content-body">
-                <section class="flexbox-container">
+                <section>
                     <div class="col-12 d-flex align-items-center justify-content-center">
                         <div class="col-md-4 col-10 box-shadow-2 p-0">
-                            <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
+                            <div class="card border-grey border-lighten-3">
 
                                 <div class="card-header border-0">
                                     <div class="card-title text-center">
@@ -108,7 +108,35 @@
                                         <?php endif ?>
 
                                         <fieldset class="form-group position-relative has-icon-left">
-                                            <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Correo electrónico o teléfono" value="<?php echo set_value('usuario') == false ? $this->session->flashdata('usuario') : set_value('usuario'); ?>" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toLowerCase()" required>
+                                            <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Nombre" value="<?php echo set_value('usuario') == false ? $this->session->flashdata('usuario') : set_value('usuario'); ?>" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toLowerCase()" required>
+                                            <div class="form-control-position">
+                                                <i class="ft-user"></i>
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="form-group position-relative has-icon-left">
+                                            <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Apellido paterno" value="<?php echo set_value('usuario') == false ? $this->session->flashdata('usuario') : set_value('usuario'); ?>" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toLowerCase()" required>
+                                            <div class="form-control-position">
+                                                <i class="ft-user"></i>
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="form-group position-relative has-icon-left">
+                                            <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Apellido materno" value="<?php echo set_value('usuario') == false ? $this->session->flashdata('usuario') : set_value('usuario'); ?>" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toLowerCase()" required>
+                                            <div class="form-control-position">
+                                                <i class="ft-user"></i>
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="form-group position-relative has-icon-left">
+                                            <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Correo electronico" value="<?php echo set_value('usuario') == false ? $this->session->flashdata('usuario') : set_value('usuario'); ?>" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toLowerCase()" required>
+                                            <div class="form-control-position">
+                                                <i class="ft-user"></i>
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="form-group position-relative has-icon-left">
+                                            <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario" value="<?php echo set_value('usuario') == false ? $this->session->flashdata('usuario') : set_value('usuario'); ?>" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toLowerCase()" required>
                                             <div class="form-control-position">
                                                 <i class="ft-user"></i>
                                             </div>
@@ -122,18 +150,22 @@
                                         </fieldset>
 
                                         <div class="form-group row">
-                                            <div class="col-md-4 col-12 text-center text-sm-left">
+                                            <div class="col-lg-6 col-md-6 col-6">
+                                                <button type="button" id="btnCrear" class="btn btn-outline-primary btn-block">
+                                                    Crear ahorrito
+                                                </button>
                                             </div>
-                                            <div class="col-md-8 col-12 float-sm-left text-center text-sm-right">
-                                                <!--a href="<?php //echo site_url('login'); 
-                                                            ?>" class="card-link">
-                                                    ¿Olvidaste tu contraseña?
-                                                </a-->
+                                            <div class="col-lg-6 col-md-6 col-6">
+                                                <button type="button" id="btnUnirse" class="btn btn-outline-primary btn-block">
+                                                    Unirse ahorrito
+                                                </button>
                                             </div>
                                         </div>
 
-                                        <button type="submit" class="btn btn-outline-success btn-block"><i class="ft-unlock"></i> Iniciar sesion</button>
-                                        <a href="<?php echo site_url('registrar'); ?>" class="btn btn-outline-primary btn-block"><i class="ft-user"></i> Registrarse</a>
+                                        <!-- Contenedor donde aparecerán los inputs -->
+                                        <div id="contenedorInput" class="mt-3"></div>
+
+                                        <button type="submit" class="btn btn-outline-success btn-block"><i class="ft-unlock"></i> Registrarse</button>
 
                                         <?php echo form_close(); ?>
                                     </div>
@@ -164,6 +196,30 @@
     <!-- BEGIN PAGE LEVEL JS-->
     <script src="<?php echo base_url('app-assets/js/scripts/forms/form-login-register.js'); ?>" type="text/javascript"></script>
     <!-- END PAGE LEVEL JS-->
+
+    <script>
+        const contenedor = document.getElementById("contenedorInput");
+        const btnCrear = document.getElementById("btnCrear");
+        const btnUnirse = document.getElementById("btnUnirse");
+
+        btnCrear.addEventListener("click", () => {
+            contenedor.innerHTML = `
+      <fieldset class="form-group position-relative has-icon-left">
+        <label for="nombreAhorrito">Nombre del ahorrito:</label>
+        <input type="text" id="nombreAhorrito" class="form-control" placeholder="Ej. Ahorrito de vacaciones">
+      </fieldset>
+    `;
+        });
+
+        btnUnirse.addEventListener("click", () => {
+            contenedor.innerHTML = `
+      <fieldset class="form-group position-relative has-icon-left">
+        <label for="idAhorrito">ID del ahorrito:</label>
+        <input type="text" id="idAhorrito" class="form-control" placeholder="Ej. AH12345">
+      </fieldset>
+    `;
+        });
+    </script>
 
     <?php if (isset($scripts) && is_array($scripts)) : ?>
         <?php foreach ($scripts as $script) : ?>
